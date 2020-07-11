@@ -16,6 +16,7 @@
           :capital="country.capital"
           :callingCodes="country.callingCodes[0]"
           :population="country.population"
+          :area="country.area"
         />
       </ul>
     </div>

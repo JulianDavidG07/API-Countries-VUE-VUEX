@@ -1,8 +1,10 @@
 <template>
-  <div class="bg-indigo-200 border-2 border-indigo-900 rounded-lg my-2">
+  <div
+    class="block bg-indigo-200 border-2 border-indigo-900 rounded-lg my-2 md:w-1/5"
+  >
     <div class="flex justify-end">
       <div
-        class="absolute bg-orange-300 w-16 rounded-full mt-2 border border-black"
+        class="absolute bg-indigo-100 w-16 rounded-full mt-2 border border-black"
       >
         + {{ callingCodes }}
       </div>
@@ -21,13 +23,35 @@
     <div class="text-left mt-2 ml-2">
       <p class="block"><strong>Capital: </strong>{{ capital }}</p>
       <p class="block"><strong>Population: </strong>{{ population }}</p>
+      <p class="block"><strong>Area: </strong>{{ area }}</p>
     </div>
+
+    <button
+      class="bg-indigo-700 px-2 text-white rounded-lg border border-black focus:outline-none my-3"
+      @click="toggleModal = !toggleModal"
+    >
+      More ...
+    </button>
+
+    <ModalCard v-if="toggleModal" />
   </div>
 </template>
 
 <script>
+import ModalCard from "./ModalCard";
+
 export default {
   name: "Card",
+
+  components: {
+    ModalCard,
+  },
+
+  data() {
+    return {
+      toggleModal: false,
+    };
+  },
 
   props: {
     flag: {
@@ -50,6 +74,9 @@ export default {
     },
     population: {
       default: "population",
+    },
+    area: {
+      dafault: "area,",
     },
   },
 };
