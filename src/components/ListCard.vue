@@ -8,7 +8,7 @@
     </button>
 
     <button
-      class="bg-indigo-700 px-2 text-white rounded-lg border border-black focus:outline-none my-3"
+      class="bg-indigo-700 px-2 text-white rounded-lg border border-black focus:outline-none"
       @click="toggleModal = !toggleModal"
     >
       More ...
