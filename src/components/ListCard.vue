@@ -27,6 +27,7 @@
         />
         <ModalCard
           v-if="toggleModal"
+          :languages="country.languages"
           :demonym="country.demonym"
           :region="country.region"
           :subregion="country.subregion"
