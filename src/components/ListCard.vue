@@ -7,6 +7,13 @@
       Get
     </button>
 
+    <button
+      class="bg-indigo-700 px-2 text-white rounded-lg border border-black focus:outline-none my-3"
+      @click="toggleModal = !toggleModal"
+    >
+      More ...
+    </button>
+
     <div>
       <ul v-for="country of dataArray" :key="country.name">
         <Card
@@ -18,6 +25,12 @@
           :population="country.population"
           :area="country.area"
         />
+        <ModalCard
+          v-if="toggleModal"
+          :demonym="country.demonym"
+          :region="country.region"
+          :subregion="country.subregion"
+        />
       </ul>
     </div>
   </div>
@@ -26,12 +39,20 @@
 <script>
 import { mapState, mapMutations, mapActions } from "vuex";
 import Card from "./Card";
+import ModalCard from "./ModalCard";
 
 export default {
   name: "HelloWorld",
 
   components: {
     Card,
+    ModalCard,
+  },
+
+  data() {
+    return {
+      toggleModal: false,
+    };
   },
 
   computed: {

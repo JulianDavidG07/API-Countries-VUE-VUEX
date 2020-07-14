@@ -25,32 +25,12 @@
       <p class="block"><strong>Population: </strong>{{ population }}</p>
       <p class="block"><strong>Area: </strong>{{ area }}</p>
     </div>
-
-    <button
-      class="bg-indigo-700 px-2 text-white rounded-lg border border-black focus:outline-none my-3"
-      @click="toggleModal = !toggleModal"
-    >
-      More ...
-    </button>
-    <ModalCard v-if="toggleModal" :region="country.region" />
   </div>
 </template>
 
 <script>
-import ModalCard from "./ModalCard";
-
 export default {
   name: "Card",
-
-  data() {
-    return {
-      toggleModal: false,
-    };
-  },
-
-  components: {
-    ModalCard,
-  },
 
   props: {
     flag: {
