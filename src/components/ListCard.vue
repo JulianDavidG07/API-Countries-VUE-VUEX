@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Search />
+    <Search v-model="search" />
 
     <button
       class="bg-indigo-700 px-2 text-white rounded-lg border border-black focus:outline-none"
@@ -10,7 +10,7 @@
     </button>
 
     <div>
-      <ul v-for="country of dataArray" :key="country.name">
+      <ul v-for="country of filterArray" :key="country.name">
         <Card
           :flag="country.flag"
           :country="country.name"
@@ -50,17 +50,25 @@ export default {
   data() {
     return {
       toggleModal: false,
+      search: "",
     };
   },
 
   computed: {
-    ...mapState(["dataArray", "search"]),
+    ...mapState(["dataArray"]),
+
+    filterArray() {
+      return this.dataArray.filter((country) => {
+        return country.name.toLowerCase().includes(this.search.toLowerCase());
+      });
+    },
   },
 
   methods: {
     ...mapMutations(["pushData", "filterData"]),
     ...mapActions(["getData"]),
   },
+
   mounted() {
     this.getData();
   },
