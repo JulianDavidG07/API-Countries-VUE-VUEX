@@ -6,7 +6,6 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     dataArray: [],
-    toggleModal: false,
   },
 
   mutations: {
@@ -17,9 +16,13 @@ export default new Vuex.Store({
 
   actions: {
     getData: async ({ commit }) => {
-      const data = await fetch("https://restcountries.eu/rest/v2/all");
-      const dataArray = await data.json();
-      commit("pushData", dataArray);
+      try {
+        const data = await fetch("https://restcountries.eu/rest/v2/all");
+        const dataArray = await data.json();
+        commit("pushData", dataArray);
+      } catch (error) {
+        alert(error);
+      }
     },
   },
 

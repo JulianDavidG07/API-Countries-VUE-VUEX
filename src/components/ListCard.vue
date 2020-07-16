@@ -1,11 +1,6 @@
 <template>
   <div>
-    <button
-      class=" bg-black text-yellow-300 px-2 rounded-lg focus:outline-none"
-      @click="getData"
-    >
-      Get
-    </button>
+    <Search />
 
     <button
       class="bg-indigo-700 px-2 text-white rounded-lg border border-black focus:outline-none"
@@ -39,6 +34,7 @@
 
 <script>
 import { mapState, mapMutations, mapActions } from "vuex";
+import Search from "./Search";
 import Card from "./Card";
 import ModalCard from "./ModalCard";
 
@@ -48,6 +44,7 @@ export default {
   components: {
     Card,
     ModalCard,
+    Search,
   },
 
   data() {
@@ -57,12 +54,15 @@ export default {
   },
 
   computed: {
-    ...mapState(["dataArray"]),
+    ...mapState(["dataArray", "search"]),
   },
 
   methods: {
-    ...mapMutations(["pushData"]),
+    ...mapMutations(["pushData", "filterData"]),
     ...mapActions(["getData"]),
+  },
+  mounted() {
+    this.getData();
   },
 };
 </script>

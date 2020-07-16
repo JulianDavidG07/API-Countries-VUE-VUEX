@@ -16,13 +16,13 @@ export default {
 
   filters: {
     getLanguages: (languages) => {
-      return languages.map((x) => x.name);
+      let item = languages.map((x) => x["name"]);
+      return item.join(", ");
     },
   },
 
   props: {
     languages: {
-      type: String,
       default: "Languages",
     },
     region: {

@@ -8,7 +8,11 @@
       >
         + {{ callingCodes }}
       </div>
-      <img class=" rounded-lg" :src="flag" alt="Flag Country" />
+      <img
+        class=" rounded-lg border border-black"
+        :src="flag"
+        alt="Flag Country"
+      />
     </div>
 
     <div class="flex justify-center my-2">
