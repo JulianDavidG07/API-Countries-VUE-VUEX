@@ -2,12 +2,14 @@
   <div>
     <Search v-model="search" />
 
-    <button
-      class="bg-indigo-700 px-2 text-white rounded-lg border border-black focus:outline-none"
-      @click="toggleModal = !toggleModal"
-    >
-      More ...
-    </button>
+    <div class="flex justify-center">
+      <div>Full Information:</div>
+      <input
+        class=" self-center mx-2"
+        type="checkbox"
+        @click="toggleModal = !toggleModal"
+      />
+    </div>
 
     <div>
       <ul v-for="country of filterArray" :key="country.name">
