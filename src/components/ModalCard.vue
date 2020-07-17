@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-gray-800 text-left px-2 text-white mb-10 mx-2 py-2 rounded-lg">
+  <div
+    class="bg-gray-800 text-left px-2 text-white mb-12 py-2 rounded-lg md:w-1/5 border border-white"
+  >
     <p>
       <span class="font-bold">Language(s): </span>
       {{ languages | getLanguages }}

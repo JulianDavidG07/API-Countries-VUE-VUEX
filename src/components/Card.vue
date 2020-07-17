@@ -1,6 +1,6 @@
 <template>
   <div
-    class="block bg-gray-800 border-2 border-gray-100 text-white rounded-lg my-2 md:w-1/5"
+    class="bg-gray-800 border-2 border-gray-100 text-white rounded-lg my-2 md:w-1/5"
   >
     <div class="flex justify-end">
       <div

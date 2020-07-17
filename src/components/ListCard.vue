@@ -1,9 +1,8 @@
 <template>
   <div>
-    <Search v-model="search" />
-
     <div class="flex justify-center">
-      <div>Full Information:</div>
+      <Search v-model="search" />
+      <span class="ml-2">Full Data:</span>
       <input
         class=" self-center mx-2"
         type="checkbox"
@@ -11,25 +10,31 @@
       />
     </div>
 
-    <div>
-      <ul v-for="country of filterArray" :key="country.name">
-        <Card
-          :flag="country.flag"
-          :country="country.name"
-          :alpha3Code="country.alpha3Code"
-          :capital="country.capital"
-          :callingCodes="country.callingCodes[0]"
-          :population="country.population"
-          :area="country.area"
-        />
-        <ModalCard
-          v-if="toggleModal"
-          :languages="country.languages"
-          :demonym="country.demonym"
-          :region="country.region"
-          :subregion="country.subregion"
-        />
-      </ul>
+    <div class="flex justify-center">
+      <SelectRegion />
+    </div>
+
+    <div class="bg-black flex justify-center">
+      <div class="inline-block">
+        <ul v-for="country of filterArray" :key="country.name">
+          <Card
+            :flag="country.flag"
+            :country="country.name"
+            :alpha3Code="country.alpha3Code"
+            :capital="country.capital"
+            :callingCodes="country.callingCodes[0]"
+            :population="country.population"
+            :area="country.area"
+          />
+          <ModalCard
+            v-if="toggleModal"
+            :languages="country.languages"
+            :demonym="country.demonym"
+            :region="country.region"
+            :subregion="country.subregion"
+          />
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -39,6 +44,7 @@ import { mapState, mapMutations, mapActions } from "vuex";
 import Search from "./Search";
 import Card from "./Card";
 import ModalCard from "./ModalCard";
+import SelectRegion from "./SelectRegion";
 
 export default {
   name: "HelloWorld",
@@ -47,6 +53,7 @@ export default {
     Card,
     ModalCard,
     Search,
+    SelectRegion,
   },
 
   data() {
