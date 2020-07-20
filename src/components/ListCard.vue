@@ -1,17 +1,21 @@
 <template>
-  <div>
-    <div class="flex justify-center">
-      <Search v-model="search" />
-      <span class="ml-2">Full Data:</span>
-      <input
-        class=" self-center mx-2"
-        type="checkbox"
-        @click="toggleModal = !toggleModal"
-      />
-    </div>
+  <div class="bg-blue-700">
+    <div class="py-3">
+      <div class="flex justify-center rounded-lg py-2">
+        <Search v-model="search" />
+        <div class="bg-blue-400 mx-2 rounded-lg">
+          <span class="ml-2">Full Data:</span>
+          <input
+            class=" self-center mx-2"
+            type="checkbox"
+            @click="toggleModal = !toggleModal"
+          />
+        </div>
+      </div>
 
-    <div class="flex justify-center">
-      <SelectRegion />
+      <div class="flex justify-center bg-blue-200 mx-24 rounded-lg">
+        <SelectRegion />
+      </div>
     </div>
 
     <div class="bg-black flex justify-center">

@@ -1,7 +1,12 @@
 <template>
   <div>
-    <label for="cars">Filter by continent:</label>
-    <select name="region" id="region">
+    <label for="cars">Filter by Region:</label>
+    <select
+      class="bg-blue-400 rounded-lg border border-black mx-1 font-light focus:outline-none"
+      name="region"
+      id="region"
+    >
+      <option value="All">All</option>
       <option value="America">America</option>
       <option value="Africa">Africa</option>
       <option value="Europa">Europa</option>
