@@ -5,11 +5,7 @@
         <Search v-model="search" />
         <div class="bg-blue-400 mx-2 rounded-lg">
           <span class="ml-2">Full Data:</span>
-          <input
-            class=" self-center mx-2"
-            type="checkbox"
-            @click="toggleModal = !toggleModal"
-          />
+          <input class="self-center mx-2" type="checkbox" @click="toggleModal = !toggleModal" />
         </div>
       </div>
 
