@@ -1,9 +1,6 @@
 <template>
   <div class="bg-gray-800 border-2 border-gray-100 text-white rounded-lg my-2">
     <div class="flex justify-end">
-      <div
-        class="absolute bg-gray-700 w-16 rounded-full mt-2 border border-black"
-      >+ {{ callingCodes }}</div>
       <img class="rounded-lg border border-black" :src="flag" alt="Flag Country" />
     </div>
 
@@ -12,6 +9,12 @@
       <span
         class="bg-black font-light text-white text-xs rounded-lg mx-2 px-1 py-0 self-center"
       >{{ alpha3Code }}</span>
+    </div>
+
+    <div class="flex justify-center">
+      <div
+        class="bg-gray-300 w-12 text-black rounded-lg text-center text-xs"
+      >{{ callingCodes | zipCode }}</div>
     </div>
 
     <div class="text-left mt-2 ml-2">
@@ -39,6 +42,10 @@ export default {
   filters: {
     pointDecimal: (area) => {
       return area.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "1.");
+    },
+
+    zipCode: (callingCodes) => {
+      return `+ ${callingCodes}`;
     },
   },
 

@@ -1,14 +1,21 @@
 <template>
-  <div
-    class="bg-gray-800 text-left px-2 text-white mb-12 py-2 rounded-lg md:w-1/5 border border-white"
-  >
+  <div class="bg-gray-800 text-left px-2 text-white mb-12 py-2 rounded-lg border border-white">
     <p>
-      <span class="font-bold">Language(s): </span>
+      <span class="font-bold">Language(s):</span>
       {{ languages | getLanguages }}
     </p>
-    <p><span class="font-bold">Demonym: </span> {{ demonym }}</p>
-    <p><span class="font-bold">Region: </span> {{ region }}</p>
-    <p><span class="font-bold">Sub-Region: </span> {{ subregion }}</p>
+    <p>
+      <span class="font-bold">Demonym:</span>
+      {{ demonym }}
+    </p>
+    <p>
+      <span class="font-bold">Region:</span>
+      {{ region }}
+    </p>
+    <p>
+      <span class="font-bold">Sub-Region:</span>
+      {{ subregion }}
+    </p>
   </div>
 </template>
 

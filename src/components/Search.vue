@@ -1,7 +1,7 @@
 <template>
   <div class="block">
     <input
-      class="bg-yellow-200 rounded-lg focus:outline-none px-2"
+      class="bg-blue-100 rounded-lg focus:outline-none px-2"
       :value="value"
       @input="filterSearch($event.target.value)"
       type="text"
