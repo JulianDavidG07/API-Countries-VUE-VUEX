@@ -8,10 +8,6 @@
           <input class="self-center mx-2" type="checkbox" @click="toggleModal = !toggleModal" />
         </div>
       </div>
-
-      <div class="flex justify-center bg-blue-200 mx-24 rounded-lg">
-        <SelectRegion />
-      </div>
     </div>
 
     <div class="bg-blue-700">
@@ -44,7 +40,6 @@ import { mapState, mapMutations, mapActions } from "vuex";
 import Search from "./Search";
 import Card from "./Card";
 import ModalCard from "./ModalCard";
-import SelectRegion from "./SelectRegion";
 
 export default {
   name: "HelloWorld",
@@ -53,7 +48,6 @@ export default {
     Card,
     ModalCard,
     Search,
-    SelectRegion,
   },
 
   data() {
