@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-800 border-2 border-gray-100 text-white rounded-lg my-2">
     <div class="flex justify-end">
-      <img class="rounded-lg border border-black" :src="flag" alt="Flag Country" />
+      <img style ="min-height: 160px; max-height: 160px; min-width: -webkit-fill-available;" class="rounded-lg border border-black" :src="flag" alt="Flag Country" />
     </div>
 
     <div class="flex justify-center my-2">
